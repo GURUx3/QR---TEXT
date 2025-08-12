@@ -1,11 +1,19 @@
-export default function ViewPage() {
-  const params = new URLSearchParams(window.location.search);
-  const msg = params.get("msg");
+// ViewPage.jsx
+import { useSearchParams } from "react-router";
 
-  return (
-    <div>
-      <h2>QR Message</h2>
-      <p>{msg || "No message found."}</p>
-    </div>
-  );
+
+export default function ViewPage() {
+    const [searchParams] = useSearchParams();
+    const message = searchParams.get("msg");
+
+    if (!message) {
+        return <h2>No message found in QR</h2>;
+    }
+
+    return (
+        <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
+            <h2>Scanned Message</h2>
+            <p style={{ fontSize: "20px" }}>{message}</p>
+        </div>
+    );
 }

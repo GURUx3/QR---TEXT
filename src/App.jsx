@@ -13,6 +13,7 @@ function App() {
 
       const pageUrl = `https://my-qr-app.vercel.app/view?msg=${encodeURIComponent(text)}`;
 
+
       const data = await QRCode.toDataURL(pageUrl, {
         width: 300,
         margin: 2,
