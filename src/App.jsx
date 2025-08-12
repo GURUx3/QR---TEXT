@@ -5,7 +5,7 @@ import QRCode from "qrcode";
 function App() {
   const [value, setValue] = useState("");
   const [imgData, setImgData] = useState("");
-
+  // 
   async function handleQRGeneration() {
     try {
       const text = value.trim();
