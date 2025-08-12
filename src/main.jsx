@@ -1,17 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // import './index.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+// import { BrowserRouter as Router, Routes, Route } from "react-router";
 import App from './App.jsx'
 import ViewPage from './ViewPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Router>
-      <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/view' element={<ViewPage />} />
-      </Routes>
-    </Router>
+    <App />
   </StrictMode>,
 )
